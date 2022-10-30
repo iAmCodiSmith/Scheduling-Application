@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<DialogPane minHeight="365" minWidth="810" maxWidth="810" prefHeight="375.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8.0.211"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduling.UpdateAppointmentController">
+    <content>
+
+        <BorderPane >
+            <top>
+                <VBox>
+                    <padding>
+                        <Insets left="5"/>
+                    </padding>
+                    <Label text="Update Appointment" textFill="#0090ff" underline="true">
+                        <font>
+                            <Font name="System Bold" size="14.0"/>
+                        </font>
+                    </Label>
+                    <Label text="Title ">
+                        <font>
+                            <Font name="System Bold" size="12.0"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="titleField" alignment="CENTER" maxWidth="765" prefWidth="765"
+                               onKeyReleased="#handleKeyReleased"/>
+                </VBox>
+            </top>
+
+            <left>
+
+                <VBox prefHeight="200" prefWidth="340">
+                    <padding>
+                        <Insets bottom="5" left="5" right="5" top="5"/>
+                    </padding>
+                    <Label text="Description ">
+                        <font>
+                            <Font name="System Bold" size="12.0"/>
+                        </font>
+                    </Label>
+                    <TextArea fx:id="descriptionField" prefHeight="100" prefWidth="478.0" wrapText="true" onKeyReleased="#handleKeyReleased"/>
+                    <Label text="Type ">
+                        <font>
+                            <Font name="System Bold" size="12.0"/>
+                        </font>
+                    </Label>
+                    <TextArea fx:id="typeField" prefHeight="60" prefWidth="478.0" wrapText="true" onKeyReleased="#handleKeyReleased"/>
+                </VBox>
+            </left>
+            <center>
+
+                <VBox prefWidth="450">
+                    <padding>
+                        <Insets bottom="10" left="5" right="5" top="5" />
+                    </padding>
+                    <HBox spacing="5">
+                        <padding>
+                            <Insets bottom="5" left="30" right="10" top="15" />
+                        </padding>
+                        <Label text="Start Date:">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font></Label>
+                        <DatePicker fx:id="date" minWidth="120" prefWidth="120" />
+
+                        <Spinner fx:id="startHour" onMouseClicked="#handleKeyReleased" min="1" max="12" initialValue="12" minWidth="55" maxWidth="55"/>
+                        <Spinner fx:id="startMinute" onMouseClicked="#handleKeyReleased" min="0" max="59" initialValue="0" minWidth="55" maxWidth="55"/>
+                        <RadioButton fx:id="startAmRB" onMouseClicked="#handleKeyReleased" style="-fx-: blue;" text="AM" toggleGroup="$startAmPmToggleGroup" minWidth="40">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="startAmPmToggleGroup" />
+                            </toggleGroup></RadioButton>
+                        <RadioButton fx:id="startPmRB" onMouseClicked="#handleKeyReleased" text="PM" toggleGroup="$startAmPmToggleGroup" minWidth="40" />
+                    </HBox>
+                    <HBox spacing="5">
+                        <padding>
+                            <Insets bottom="5" left="33" right="10" top="10" />
+                        </padding>
+                        <Label text=" End Date:">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font></Label>
+                        <Spinner fx:id="endHour" onMouseClicked="#handleKeyReleased" min="1" max="12" initialValue="12" minWidth="55" maxWidth="55"/>
+                        <Spinner fx:id="endMinute" onMouseClicked="#handleKeyReleased" min="0" max="59" initialValue="0" minWidth="55" maxWidth="55"/>
+                        <RadioButton fx:id="endAmRB" onMouseClicked="#handleKeyReleased" style="-fx-: blue;" text="AM" toggleGroup="$endAmPmToggleGroup" minWidth="40">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="endAmPmToggleGroup" />
+                            </toggleGroup></RadioButton>
+                        <RadioButton fx:id="endPmRB" onMouseClicked="#handleKeyReleased" text="PM" toggleGroup="$endAmPmToggleGroup" minWidth="40"/>
+                    </HBox>
+
+                    <HBox>
+                        <padding>
+                            <Insets bottom="15" left="30" right="10" top="25"/>
+                        </padding>
+                        <Label text="Contact    ">
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="contactField" prefWidth="340" onKeyReleased="#handleKeyReleased"/>
+                    </HBox>
+                    <HBox>
+                        <padding>
+                            <Insets left="30" right="10" top="15"/>
+                        </padding>
+                        <Label text="Location   ">
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="locationField" prefWidth="340" onKeyReleased="#handleKeyReleased"/>
+                    </HBox>
+
+                </VBox>
+            </center>
+
+            <right>
+
+            </right>
+
+            <bottom>
+                <VBox>
+                    <padding>
+                        <Insets left="5" right="20" bottom="5"/>
+                    </padding>
+                    <HBox>
+                        <Label text="URL">
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                        </Label>
+
+                    </HBox>
+                    <HBox>
+
+                        <TextField fx:id="urlField" prefHeight="25.0" prefWidth="765.0" maxWidth="765"
+                                   onKeyReleased="#handleKeyReleased"/>
+                    </HBox>
+                    <HBox alignment="BOTTOM_RIGHT" spacing="10">
+                        <padding>
+                            <Insets bottom="15" left="5" right="5" top="10"/>
+                        </padding>
+                        <Button text="Update Appointment" fx:id="updateButton" onAction="#handleUpdateButtonAction"/>
+                        <Button text="Exit" fx:id="closeButton" onAction="#handleCloseButtonAction"/>
+                    </HBox>
+                </VBox>
+            </bottom>
+        </BorderPane>
+    </content>
+</DialogPane>

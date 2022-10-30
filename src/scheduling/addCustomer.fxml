@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.CheckBox?>
+<DialogPane prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.211" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduling.AddCustomerController">
+<content>
+    <BorderPane prefHeight="200.0" prefWidth="400.0">
+        <top>
+            <HBox spacing="30" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <padding>
+                    <Insets bottom="10" left="10" top="10" />
+                </padding>
+                <Label text="Add Customer" textFill="blue">
+                    <font>
+                        <Font name="Arial bold" size="14" />
+                    </font>
+                </Label>
+
+            </HBox>
+        </top>
+
+        <center>
+            <GridPane hgap="10" vgap="15">
+                <padding>
+                    <Insets bottom="10" left="20" right="20" top="10" />
+                </padding>
+                <Label text="ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField disable="true" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="110.0" style="-fx-background-color: transparent;         -fx-border-style: solid; -fx-border-radius: 3;" text="Auto Gen-Disabled" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <font>
+                        <Font size="10.0" />
+                    </font></TextField>
+                <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="nameField" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="200.0" promptText="Part Name"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1" onKeyReleased="#handleKeyReleased"/>
+                <Label text="Address" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="addressField" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="200.0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="2" onKeyReleased="#handleKeyReleased"/>
+                <Label text="Address 2" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="address2Field" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="200.0"
+                           promptText="(optional)" GridPane.columnIndex="1" GridPane.rowIndex="3" onKeyReleased="#handleKeyReleased"/>
+                <Label text="City" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <TextField fx:id="cityField" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="150.0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="4" onKeyReleased="#handleKeyReleased"/>
+                <Label text="Country" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <TextField fx:id="countryField" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="150.0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="5" onKeyReleased="#handleKeyReleased"/>
+                <Label text="Zip Code" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <TextField fx:id="postalCodeField" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="100.0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="6" onKeyReleased="#handleKeyReleased"/>
+                <Label text="Phone Number" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <TextField fx:id="phoneField" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="150.0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="7" onKeyReleased="#handleKeyReleased"/>
+                <Label text="Active" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                <CheckBox fx:id="activeField" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+            </GridPane>
+        </center>
+
+        <bottom>
+            <HBox alignment="CENTER_RIGHT" spacing="15">
+                <padding>
+                    <Insets right="10" top="5" />
+                </padding>
+                <Button fx:id="saveButton" prefWidth="60" text="Save" onAction="#handleSaveButtonAction"/>
+                <Button prefWidth="60" text="Cancel" fx:id="closeButton" cancelButton="true" onAction="#handleCloseButtonAction" />
+            </HBox>
+        </bottom>
+    </BorderPane>
+</content>
+</DialogPane>

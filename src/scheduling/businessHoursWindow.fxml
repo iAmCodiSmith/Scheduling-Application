@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="scheduling.BusinessHoursController"
+            prefHeight="150.0" prefWidth="320.0">
+    <BorderPane>
+        <VBox>
+        <HBox spacing="5">
+            <padding>
+                <Insets bottom="5" left="10" right="10" top="15" />
+            </padding>
+            <Label text="Start Time:" minWidth="80">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font></Label>
+
+            <Spinner fx:id="startHour" onMouseClicked="#handleKeyReleased" min="1" max="12" initialValue="12" minWidth="55" maxWidth="55"/>
+            <Spinner fx:id="startMinute" onMouseClicked="#handleKeyReleased" min="0" max="59" initialValue="0" minWidth="55" maxWidth="55"/>
+            <RadioButton fx:id="startAmRB" onMouseClicked="#handleKeyReleased" style="-fx-: blue;" text="AM" toggleGroup="$startAmPmToggleGroup" minWidth="40">
+                <toggleGroup>
+                    <ToggleGroup fx:id="startAmPmToggleGroup" />
+                </toggleGroup></RadioButton>
+            <RadioButton fx:id="startPmRB" onMouseClicked="#handleKeyReleased" text="PM" toggleGroup="$startAmPmToggleGroup" minWidth="40" />
+        </HBox>
+        <HBox spacing="5">
+            <padding>
+                <Insets bottom="5" left="12" right="10" top="10" />
+            </padding>
+            <Label text=" End Time:" minWidth="80">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font></Label>
+            <Spinner fx:id="endHour" onMouseClicked="#handleKeyReleased" min="1" max="12" initialValue="12" minWidth="55" maxWidth="55"/>
+            <Spinner fx:id="endMinute" onMouseClicked="#handleKeyReleased" min="0" max="59" initialValue="0" minWidth="55" maxWidth="55"/>
+            <RadioButton fx:id="endAmRB" onMouseClicked="#handleKeyReleased" style="-fx-: blue;" text="AM" toggleGroup="$endAmPmToggleGroup" minWidth="40">
+                <toggleGroup>
+                    <ToggleGroup fx:id="endAmPmToggleGroup" />
+                </toggleGroup></RadioButton>
+            <RadioButton fx:id="endPmRB" onMouseClicked="#handleKeyReleased" text="PM" toggleGroup="$endAmPmToggleGroup" minWidth="40"/>
+        </HBox>
+            <HBox alignment="TOP_CENTER" spacing="10">
+                <padding>
+                    <Insets bottom="15" left="5" right="5" top="10"/>
+                </padding>
+                <Button text="Update Business Hours" fx:id="updateButton" onAction="#handleUpdateButtonAction" minWidth="160"/>
+                <Button text="Exit" fx:id="closeButton" onAction="#handleCloseButtonAction" minWidth="60"/>
+            </HBox>
+        </VBox>
+    </BorderPane>
+
+</AnchorPane>

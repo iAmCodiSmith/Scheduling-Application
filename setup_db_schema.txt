@@ -1,0 +1,11 @@
+create database schedule
+
+create table user (userId int, userName varchar(255), password varchar(255),active int, CREATEDATE DATETIME,CREATEDBY varchar(255),LASTUPDATE TIMESTAMP,LASTUPDATEBY varchar(255));
+INSERT INTO USER (userId, userName, password ,active,CREATEDATE,CREATEDBY,LASTUPDATE,LASTUPDATEBY) VALUES ("1","admin","admin", "1","2022-10-30T15:41","admin", "2022-10-30T15:41","admin");
+
+create table country (countryId int PRIMARY KEY, country varchar(255), CREATEDATE DATETIME,CREATEDBY varchar(255),LASTUPDATE TIMESTAMP,LASTUPDATEBY varchar(255));
+create table city (cityId int PRIMARY KEY, city varchar(255), countryId int, CREATEDATE DATETIME,CREATEDBY varchar(255),LASTUPDATE TIMESTAMP,LASTUPDATEBY varchar(255), FOREIGN KEY (countryID) REFERENCES country(countryID));
+create table address (addressId int PRIMARY KEY, address varchar(255), address2 varchar(255), cityId int, postalCode varchar(255), phone varchar(255), CREATEDATE DATETIME,CREATEDBY varchar(255),LASTUPDATE TIMESTAMP,LASTUPDATEBY varchar(255), FOREIGN KEY (cityID) REFERENCES city(cityID));
+create table customer (customerId int PRIMARY KEY, customer varchar(255), addressId int ,active int, CREATEDATE DATETIME,CREATEDBY varchar(255),LASTUPDATE TIMESTAMP,LASTUPDATEBY varchar(255),FOREIGN KEY (addressID) REFERENCES address(addressID));
+create table appointment (appointmentId int PRIMARY KEY, customerId int, userId int, title varchar(255), description varchar(255), location varchar(255), contact varchar(255), type varchar(255), url varchar(255), start DATETIME, end DATETIME, CREATEDATE DATETIME,CREATEDBY varchar(255),LASTUPDATE TIMESTAMP,LASTUPDATEBY varchar(255),FOREIGN KEY (customerID) REFERENCES customer(customerID));
+admin
