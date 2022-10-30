@@ -14,3 +14,5 @@
   <img src="https://github.com/iAmCodiSmith/Scheduling-Application/blob/master/ScheduleAppImages/login.png"/>
     <img src="https://github.com/iAmCodiSmith/Scheduling-Application/blob/master/ScheduleAppImages/main.png"/>
 </p>
+
+#### Originally written in IntelliJ.
